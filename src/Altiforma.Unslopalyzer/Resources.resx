@@ -16,10 +16,16 @@
     <value>Extract complex condition into a named variable</value>
   </data>
   <data name="UN001MessageFormat" xml:space="preserve">
-    <value>Condition has {0} operands; assign it to a variable whose name explains the intent</value>
+    <value>Condition {0}; assign it to a variable whose name explains the intent</value>
   </data>
   <data name="UN001Description" xml:space="preserve">
     <value>Long or multi-line boolean conditions hide the intent of a branch. Assign the condition to a local variable whose name states what it means.</value>
+  </data>
+  <data name="UN001ReasonTooManyOperands" xml:space="preserve">
+    <value>has {0} operands, more than the maximum of {1}</value>
+  </data>
+  <data name="UN001ReasonMultiLine" xml:space="preserve">
+    <value>has {0} operands and spans multiple lines</value>
   </data>
   <data name="UN002Title" xml:space="preserve">
     <value>Avoid needless ThrowIfCancellationRequested calls</value>
@@ -38,5 +44,14 @@
   </data>
   <data name="UN003Description" xml:space="preserve">
     <value>A try statement in the middle of a block tangles one operation's error handling with the surrounding flow. Extract the guarded operation into its own method whose body is the try statement.</value>
+  </data>
+  <data name="UN004Title" xml:space="preserve">
+    <value>Extract multi-line condition into a named variable</value>
+  </data>
+  <data name="UN004MessageFormat" xml:space="preserve">
+    <value>Condition spans multiple lines; assign it to a variable whose name explains the intent</value>
+  </data>
+  <data name="UN004Description" xml:space="preserve">
+    <value>A condition that wraps across lines, such as a call with its arguments split over several lines, buries the meaning of the branch in an argument list. Assign the result to a local variable whose name states what it means.</value>
   </data>
 </root>

@@ -23,6 +23,7 @@ Or add it to your project file:
 | [UN001](https://github.com/AltiForma/Unslopalyzer/blob/main/docs/rules/UN001.md) | Readability | Extract complex condition into a named variable | Warning | ✅ | ❌ |
 | [UN002](https://github.com/AltiForma/Unslopalyzer/blob/main/docs/rules/UN002.md) | Redundancy | Avoid needless `ThrowIfCancellationRequested` calls | Warning | ✅ | ❌ |
 | [UN003](https://github.com/AltiForma/Unslopalyzer/blob/main/docs/rules/UN003.md) | Design | Try statement should wrap an entire method body | Warning | ✅ | ❌ |
+| [UN004](https://github.com/AltiForma/Unslopalyzer/blob/main/docs/rules/UN004.md) | Readability | Extract multi-line condition into a named variable | Warning | ✅ | ❌ |
 
 ## Strict configuration
 
@@ -39,6 +40,9 @@ dotnet_diagnostic.UN002.severity = error
 
 # UN003: Try statement should wrap an entire method body
 dotnet_diagnostic.UN003.severity = error
+
+# UN004: Extract multi-line condition into a named variable
+dotnet_diagnostic.UN004.severity = error
 ```
 
 ## License

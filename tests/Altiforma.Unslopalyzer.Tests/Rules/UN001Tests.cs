@@ -5,8 +5,14 @@ using Verifier = Altiforma.Unslopalyzer.Tests.Verifiers.CSharpAnalyzerVerifier<A
 
 namespace Altiforma.Unslopalyzer.Tests.Rules;
 
-public sealed class UN001Tests
+public sealed partial class UN001Tests
 {
+    private static string TooMany(int operands, int maxOperands = 2) =>
+        $"has {operands} operands, more than the maximum of {maxOperands}";
+
+    private static string MultiLine(int operands) =>
+        $"has {operands} operands and spans multiple lines";
+
     private const string SignInStubs = """
         using System.Threading.Tasks;
 
@@ -64,7 +70,10 @@ public sealed class UN001Tests
 
         await Verifier.VerifyAnalyzerAsync(
             source,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(4)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(TooMany(4))
         );
     }
 
@@ -99,7 +108,10 @@ public sealed class UN001Tests
 
         await Verifier.VerifyAnalyzerAsync(
             source,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(3)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(TooMany(3))
         );
     }
 
@@ -121,7 +133,10 @@ public sealed class UN001Tests
 
         await Verifier.VerifyAnalyzerAsync(
             source,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(3)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(TooMany(3))
         );
     }
 
@@ -146,7 +161,10 @@ public sealed class UN001Tests
 
         await Verifier.VerifyAnalyzerAsync(
             source,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(2)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(MultiLine(2))
         );
     }
 
@@ -170,7 +188,10 @@ public sealed class UN001Tests
 
         await Verifier.VerifyAnalyzerAsync(
             source,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(3)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(TooMany(3))
         );
     }
 
@@ -200,8 +221,14 @@ public sealed class UN001Tests
 
         await Verifier.VerifyAnalyzerAsync(
             source,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(3),
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(1).WithArguments(3)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(TooMany(3)),
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(1)
+                .WithArguments(TooMany(3))
         );
     }
 
@@ -218,7 +245,10 @@ public sealed class UN001Tests
 
         await Verifier.VerifyAnalyzerAsync(
             source,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(3)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(TooMany(3))
         );
     }
 
@@ -240,7 +270,10 @@ public sealed class UN001Tests
 
         await Verifier.VerifyAnalyzerAsync(
             source,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(3)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(TooMany(3))
         );
     }
 
@@ -419,7 +452,10 @@ public sealed class UN001Tests
         await Verifier.VerifyAnalyzerAsync(
             source,
             editorConfig,
-            Verifier.Diagnostic(UN001Analyzer.DiagnosticId).WithLocation(0).WithArguments(3)
+            Verifier
+                .Diagnostic(UN001Analyzer.DiagnosticId)
+                .WithLocation(0)
+                .WithArguments(TooMany(3))
         );
     }
 }
