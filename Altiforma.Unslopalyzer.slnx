@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Altiforma.Unslopalyzer/Altiforma.Unslopalyzer.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Altiforma.Unslopalyzer.Tests/Altiforma.Unslopalyzer.Tests.csproj" />
+  </Folder>
+</Solution>
