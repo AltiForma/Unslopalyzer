@@ -21,4 +21,13 @@
   <data name="UN001Description" xml:space="preserve">
     <value>Long or multi-line boolean conditions hide the intent of a branch. Assign the condition to a local variable whose name states what it means.</value>
   </data>
+  <data name="UN002Title" xml:space="preserve">
+    <value>Avoid needless ThrowIfCancellationRequested calls</value>
+  </data>
+  <data name="UN002MessageFormat" xml:space="preserve">
+    <value>Remove this ThrowIfCancellationRequested call; pass the cancellation token to the cancellable operations instead</value>
+  </data>
+  <data name="UN002Description" xml:space="preserve">
+    <value>Cancellable operations already observe the token they are given. Calling ThrowIfCancellationRequested outside a loop adds noise without making the code more responsive to cancellation.</value>
+  </data>
 </root>
