@@ -13,7 +13,7 @@ dotnet add package Altiforma.Unslopalyzer
 Or add it to your project file:
 
 ```xml
-<PackageReference Include="Altiforma.Unslopalyzer" Version="0.1.0" PrivateAssets="all" />
+<PackageReference Include="Altiforma.Unslopalyzer" Version="0.2.0" PrivateAssets="all" />
 ```
 
 ## Rules

@@ -6,7 +6,7 @@
     <RootNamespace>Altiforma.Unslopalyzer</RootNamespace>
 
     <PackageId>Altiforma.Unslopalyzer</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
     <Description>Roslyn analyzers that flag code smells commonly produced by AI coding agents.</Description>
     <PackageTags>analyzers;roslyn;code-quality</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
