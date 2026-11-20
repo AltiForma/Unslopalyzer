@@ -61,7 +61,7 @@ A rule is not complete until **all** of the following exist and agree with each 
   - Set `helpLinkUri: HelpLinks.For(DiagnosticId)` and never hard-code the URL. `HelpLinks.For` returns `https://github.com/AltiForma/Unslopalyzer/blob/main/docs/rules/<Id>.md`. While the repository is private, these links return 404 for outside users.
 - [ ] **Documentation:** `docs/rules/UNnnn.md`, following the template below.
 - [ ] **Tests:** at least one case that triggers the diagnostic, and at least one realistic look-alike that must *not* trigger it. If the rule has a code fix, add code-fix tests too.
-- [ ] **README:** a row in the rules table.
+- [ ] **README:** a row in the rules table and an entry in the "Strict configuration" block.
 - [ ] **Release tracking:** an entry in `AnalyzerReleases.Unshipped.md`. RS2008 enforces this.
 - [ ] **Code fix (optional):** `UNnnnCodeFixProvider.cs`, with FixAll support.
 
@@ -136,10 +136,10 @@ Links to supporting material, if any.
 ```markdown
 | Id | Category | Description | Default severity | Enabled | Code fix |
 |----|----------|-------------|------------------|---------|----------|
-| [UN001](docs/rules/UN001.md) | Noise | <short description> | Warning | ✅ | ❌ |
+| [UN001](https://github.com/AltiForma/Unslopalyzer/blob/main/docs/rules/UN001.md) | Readability | <short description> | Warning | ✅ | ❌ |
 ```
 
-Write the severity as `Error`, `Warning` or `Info`. Use ✅ and ❌ for yes/no columns.
+Write the severity as `Error`, `Warning` or `Info`. Use ✅ and ❌ for yes/no columns. The Id link must be the absolute URL that `HelpLinks.For(id)` returns, because the README is also the NuGet package readme and relative links break there. Each rule must also be added to the README's "Strict configuration" block, set to `error` and with every option it supports listed.
 
 ## Writing analyzers
 

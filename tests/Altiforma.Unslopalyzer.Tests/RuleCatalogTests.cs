@@ -37,7 +37,7 @@ public sealed class RuleCatalogTests
     {
         var readme = File.ReadAllText(Path.Combine(RepositoryRoot, "README.md"));
         Assert.Contains(
-            $"| [{ruleId}](docs/rules/{ruleId}.md) |",
+            $"| [{ruleId}]({HelpLinks.For(ruleId)}) |",
             readme,
             StringComparison.Ordinal
         );
