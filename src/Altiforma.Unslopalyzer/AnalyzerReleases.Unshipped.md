@@ -7,3 +7,4 @@ Rule ID | Category | Severity | Notes
 --------|----------|----------|------
 UN001 | Readability | Warning | UN001Analyzer
 UN002 | Redundancy | Warning | UN002Analyzer
+UN003 | Design | Warning | UN003Analyzer

@@ -8,3 +8,4 @@ Roslyn analyzers that flag code smells commonly produced by AI coding agents in 
 |----|----------|-------------|------------------|---------|----------|
 | [UN001](docs/rules/UN001.md) | Readability | Extract complex condition into a named variable | Warning | ✅ | ❌ |
 | [UN002](docs/rules/UN002.md) | Redundancy | Avoid needless `ThrowIfCancellationRequested` calls | Warning | ✅ | ❌ |
+| [UN003](docs/rules/UN003.md) | Design | Try statement should wrap an entire method body | Warning | ✅ | ❌ |

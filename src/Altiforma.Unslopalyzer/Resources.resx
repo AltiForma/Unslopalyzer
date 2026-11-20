@@ -30,4 +30,13 @@
   <data name="UN002Description" xml:space="preserve">
     <value>Cancellable operations already observe the token they are given. Calling ThrowIfCancellationRequested outside a loop adds noise without making the code more responsive to cancellation.</value>
   </data>
+  <data name="UN003Title" xml:space="preserve">
+    <value>Try statement should wrap an entire method body</value>
+  </data>
+  <data name="UN003MessageFormat" xml:space="preserve">
+    <value>Move this try statement into its own method so it is the whole method body</value>
+  </data>
+  <data name="UN003Description" xml:space="preserve">
+    <value>A try statement in the middle of a block tangles one operation's error handling with the surrounding flow. Extract the guarded operation into its own method whose body is the try statement.</value>
+  </data>
 </root>
